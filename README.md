@@ -26,85 +26,58 @@ weather-cli "New York"
 # - Pressure: 1013 hPa
 
 API Endpoints
+
 You can use any of these free weather APIs:
 
-OpenWeatherMap (recommended - generous free tier):
-
-text
 https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=imperial
 Weatherstack (simple, no key required for testing):
 
-text
 http://api.weatherstack.com/current?access_key={API_KEY}&query={city}
+
 Required Features
-City Input: Accept city name as command-line argument
-
-Temperature Display: Show temperature in both Fahrenheit and Celsius
-
-Weather Conditions: Display current weather conditions (sunny, rainy, etc.)
-
-Additional Metrics: Show humidity, wind speed, and atmospheric pressure
+1. City Input: Accept city name as command-line argument
+2. Temperature Display: Show temperature in both Fahrenheit and Celsius
+3. Weather Conditions: Display current weather conditions (sunny, rainy, etc.)
+4. Additional Metrics: Show humidity, wind speed, and atmospheric pressure
 
 Error Handling:
+1. Invalid city names
+2. API rate limits
+3. Network connectivity issues
+4. Missing API credentials
+5. Weather Properties
 
-Invalid city names
-
-API rate limits
-
-Network connectivity issues
-
-Missing API credentials
-
-Weather Properties
 Each weather response should display:
-
-Temperature (Fahrenheit and Celsius)
-
-Weather conditions description
-
-Humidity percentage
-
-Wind speed
-
-Atmospheric pressure
-
-Location name
+1. Temperature (Fahrenheit and Celsius)
+2. Weather conditions description
+3. Humidity percentage
+4. Wind speed
+5. Atmospheric pressure
+6. Location name
 
 Getting Started
-Choose an API: Sign up for a free API key from OpenWeatherMap or Weatherstack
-
-Setup: Store your API key securely (environment variables recommended)
+1. Choose an API: Sign up for a free API key from OpenWeatherMap or Weatherstack
+2. Setup: Store your API key securely (environment variables recommended)
 
 Implementation:
-
-Start with basic API connectivity
-
-Add weather data parsing
-
-Implement error handling
-
-Add formatting and display
-
-Constraints
-Use only Python standard library for HTTP requests (urllib)
-
-Handle all common error cases gracefully
-
-Provide clear, user-friendly error messages
-
-Format output for easy readability
+1. Start with basic API connectivity
+2. Add weather data parsing
+3. Implement error handling
+4. Add formatting and display
+5. Constraints
+6. Use only Python standard library for HTTP requests (urllib)
+7. Handle all common error cases gracefully
+8. Provide clear, user-friendly error messages
+9. Format output for easy readability
 
 Bonus Features (Optional)
-Add support for country codes (e.g., "London,UK")
+1. Add support for country codes (e.g., "London,UK")
+2. Implement temperature unit preference (metric/imperial)
+3. Add weather icons using ASCII art
+4. Cache results to avoid API rate limits
+5. Add 5-day forecast functionality
 
-Implement temperature unit preference (metric/imperial)
 
-Add weather icons using ASCII art
-
-Cache results to avoid API rate limits
-
-Add 5-day forecast functionality
-
-This project will help you practice API keys, query parameters, nested JSON parsing, and more complex error handling - all building on your GitHub API experience!
+'This project will help you practice API keys, query parameters, nested JSON parsing, and more complex error handling - all building on your GitHub API experience!
 
 
