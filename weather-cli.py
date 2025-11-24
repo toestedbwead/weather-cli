@@ -5,7 +5,7 @@ import sys
 def main():
     if len(sys.argv) != 2:
         print("Usage: python weather-cli.py <city>")
-        print("\nExample: python weather-cli.py quezon-city")
+        # print("\nExample: python weather-cli.py quezon-city")
         return
     
     city_name = sys.argv[1]
@@ -15,7 +15,6 @@ def main():
     try:
         with urllib.request.urlopen(url) as response:
             data = json.loads(response.read())
-            print(f"Weather for {city_name}")
             # print(json.dumps(data, indent=2))
     except Exception as e:
         print(f"Error: {e}")
@@ -25,16 +24,32 @@ def main():
         print("{city_name} cannot be found.")
         return
     
-    for city in data:
-        weather = weather['main']
-        temperature = main['temp']
-        pass
+    # Weather for New York:
+# - Temperature: 72°F (22°C)
+# - Conditions: Partly cloudy
+# - Humidity: 65%
+# - Wind: 8 mph
+# - Pressure: 1013 hPa
 
-    # get temperature (far to celcius), conditions: partly cloudy, humidity, wind and pressure
+    city = data['name']
+    temperature = data['main']['temp_max']
+    weather_condition = data['weather'][0]['description']
+    humidity = data['main']['humidity']
+    wind = data['wind']['speed']
+    pressure = data['main']['pressure']
 
-    # if else statements - analyze the json response 
+    # convert kelvin temp to celcius
 
-    # find out how to access the datas in the json response like the code above. i feel like it's not being accessed.
+    temperature = temperature - 273.15
+
+    print(f"Weather for {city} City")
+    print(f"Temperature: {temperature}")
+    print(f"Weather Condition is: {weather_condition}")
+    print(f"Humidity: {humidity}")
+    print(f"Wind: {wind}")
+    print(f"Pressure: {pressure}")
+
+
     
 
 
