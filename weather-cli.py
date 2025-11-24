@@ -16,13 +16,16 @@ def main():
         with urllib.request.urlopen(url) as response:
             data = json.loads(response.read())
             # print(json.dumps(data, indent=2))
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            print(f"Error: City '{city_name}' not found.")
+        else:
+            print(f"Error: Weather Service returned HTTP {e.code}")
+        return 
     except Exception as e:
         print(f"Error: {e}")
         return
-    
-    if not data:
-        print("{city_name} cannot be found.")
-        return
+
     
     # Weather for New York:
 # - Temperature: 72°F (22°C)
