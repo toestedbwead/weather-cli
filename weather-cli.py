@@ -39,15 +39,16 @@ def main():
     pressure = data['main']['pressure']
 
     # convert kelvin temp to celcius
-
-    temperature = temperature - 273.15
+    print(temperature)
+    fahrenheit_temperature = int((temperature - 273.15) * 1.8 + 32)
+    celcius_temperature = int(temperature - 273.15)
 
     print(f"Weather for {city} City")
-    print(f"Temperature: {temperature}")
+    print(f"Temperature: {celcius_temperature}°C | {fahrenheit_temperature}°F")
     print(f"Weather Condition is: {weather_condition}")
-    print(f"Humidity: {humidity}")
-    print(f"Wind: {wind}")
-    print(f"Pressure: {pressure}")
+    print(f"Humidity: {humidity}%")
+    print(f"Wind: {wind}mph")
+    print(f"Pressure: {pressure}hPa")
 
 
     
