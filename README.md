@@ -9,13 +9,19 @@ A command-line application to fetch and display current weather information for 
 - Show weather conditions, humidity, wind speed, and atmospheric pressure
 - Clean, formatted output in the terminal
 - Robust error handling for invalid cities and API issues
-- No external dependencies - uses only Python standard library
+- Secure API key management using environment variables
 
 ## Installation
 
 1. Clone or download this repository
 2. Ensure you have Python 3.6+ installed
-3. No additional packages required
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+4. Create a .env file in the project root and add: 'WEATHER_API_KEY=your_key_here'
+5. Get API key from OpenWeatherMap
+
 
 ## Usage
 
@@ -38,14 +44,15 @@ python weather-cli.py "New York"
 # API
 This project uses the OpenWeatherMap API:
 Endpoint: https://api.openweathermap.org/data/2.5/weather
-Free tier available with registration
-Returns data in JSON format
+Free tier: available with registration
+Returns: data in JSON format
 
 # Technical Details
 1. Built with Python standard library (urllib, json, sys)
 2. Handles JSON parsing and data extraction
 3. Implements temperature conversion (Kelvin to Celsius/Fahrenheit)
 4. Robust error handling with specific HTTP status code checks
+5. Secure environment variable configuration
 
 # Development
 This project helps practice:
@@ -55,3 +62,4 @@ This project helps practice:
 4. Error handling and edge cases
 5. Command-line interface development
 6. Temperature unit conversions
+7. Environment Variable Security

@@ -1,6 +1,8 @@
 import urllib.request
 import json
 import sys
+import os
+from dotenv import load_dotenv
 
 def main():
     if len(sys.argv) != 2:
@@ -8,9 +10,19 @@ def main():
         # print("\nExample: python weather-cli.py quezon-city")
         return
     
+    load_dotenv()
+    
     city_name = sys.argv[1]
+    api_key = os.environ.get('WEATHER_API_KEY')
 
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid=8bfc491414bdb6b94393f87b01b5a0ce"
+    if not api_key:
+        print("Error: Please set WEATHER_API_KEY environment variable.")
+        print("Example: export WEATHER_API_KEY=your_key_here")
+        return
+    
+
+
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
 
     try:
         with urllib.request.urlopen(url) as response:
